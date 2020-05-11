@@ -33,10 +33,7 @@ FULL_ID = 0
 INST_ID = 1
 EPIS_ID = 2
 RAND_ID = 3
-AGENT_NAMES = ['E.F.E',
-               'Instrumental',
-               'Epistemic',
-               'Random']
+AGENT_NAMES = ["E.F.E", "Instrumental", "Epistemic", "Random"]
 N_AGENTS = 4
 
 ##############################
@@ -113,6 +110,7 @@ FAILED_MODELS = "figs/failed_models.pdf"
 ##############################
 #        Plot config         #
 ##############################
+
 
 def get_color_palette():
     palette = sns.color_palette("Paired", 12)

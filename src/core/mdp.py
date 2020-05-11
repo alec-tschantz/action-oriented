@@ -2,11 +2,7 @@ import numpy as np
 
 
 class MDP(object):
-
-    def __init__(self, a, b, c,
-                 lr=0.1,
-                 alpha=1,
-                 beta=1):
+    def __init__(self, a, b, c, lr=0.1, alpha=1, beta=1):
 
         self.A = a
         self.B = b
@@ -151,7 +147,7 @@ class MDP(object):
     @staticmethod
     def normdist(x):
         return np.dot(x, np.diag(1 / np.sum(x, 0)))
-        
+
     @staticmethod
     def get_true_model():
         b = np.zeros([2, 2, 2])

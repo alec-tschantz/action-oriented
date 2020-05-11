@@ -3,13 +3,14 @@ from core.config import *
 
 
 class Environment(object):
-
-    def __init__(self,
-                 env_size=ENVIRONMENT_SIZE,
-                 init_distance=INIT_DISTANCE,
-                 source_size=SOURCE_SIZE,
-                 agent_size=AGENT_SIZE,
-                 velocity=VELOCITY):
+    def __init__(
+        self,
+        env_size=ENVIRONMENT_SIZE,
+        init_distance=INIT_DISTANCE,
+        source_size=SOURCE_SIZE,
+        agent_size=AGENT_SIZE,
+        velocity=VELOCITY,
+    ):
 
         self.env_size = env_size
         self.init_distance = init_distance
@@ -36,8 +37,7 @@ class Environment(object):
         fx = self.pos[0] + (self.agent_size * np.cos(self.theta))
         fy = self.pos[1] + (self.agent_size * np.sin(self.theta))
         f_dis = self.dis(fx, fy, self.s_pos[0], self.s_pos[1])
-        b_dis = self.dis(self.pos[0], self.pos[1],
-                         self.s_pos[0], self.s_pos[1])
+        b_dis = self.dis(self.pos[0], self.pos[1], self.s_pos[0], self.s_pos[1])
         if f_dis > b_dis:
             o = NEG_GRADIENT
         else:
@@ -46,8 +46,8 @@ class Environment(object):
 
     def act(self, a):
         if a == RUN and self.distance() > self.source_size:
-            self.pos[0] += (self.vel * np.cos(self.theta))
-            self.pos[1] += (self.vel * np.sin(self.theta))
+            self.pos[0] += self.vel * np.cos(self.theta)
+            self.pos[1] += self.vel * np.sin(self.theta)
             self.check_bounds()
         elif a == TUMBLE:
             self.theta = np.random.rand() * (2 * np.pi)
