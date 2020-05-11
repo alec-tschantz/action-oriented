@@ -15,13 +15,13 @@ def get_mdp(agent_id, reverse_prior=False):
 
     kwargs = {}
     if agent_id == FULL_ID:
-        kwargs = {'alpha': ALPHA, 'beta': 1, 'lr': LR}
+        kwargs = {"alpha": ALPHA, "beta": 1, "lr": LR}
     elif agent_id == INST_ID:
-        kwargs = {'alpha': ALPHA, 'beta': 0, 'lr': LR}
+        kwargs = {"alpha": ALPHA, "beta": 0, "lr": LR}
     elif agent_id == EPIS_ID:
-        kwargs = {'alpha': 0, 'beta': 1, 'lr': LR}
+        kwargs = {"alpha": 0, "beta": 1, "lr": LR}
     elif agent_id == RAND_ID:
-        kwargs = {'alpha': 0, 'beta': 0, 'lr': LR}
+        kwargs = {"alpha": 0, "beta": 0, "lr": LR}
 
     mdp = MDP(a, b, c, **kwargs)
     return mdp
